@@ -1168,6 +1168,7 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
+#define FIL_RUNOUT_PIN PA4
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT false // Enable the sensor on startup. Override with M412 followed by M500.
@@ -1387,8 +1388,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT 0  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT 0  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT X_MIN_POS  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT Y_MAX_POS  // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)
