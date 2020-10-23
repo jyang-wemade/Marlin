@@ -5,6 +5,53 @@ Unless you are running a 12V heater on the hotend like I am, you will want to up
 - BLTouch is assumed to be connected to `MT_DET2`
 - There is a LVGL UI branch as well.  I am not using it though as menu options are limited compared to Marlin Classic UI.  
 
+## Start G-Code ##
+```
+G92 E0
+M140 S{ material_bed_temperature_layer_0 }
+G28 X Y ; Home XY
+M190 S{material_bed_temperature_layer_0}
+M104 S{material_print_temperature_layer_0}
+G28 X Y ; Home XY
+M109 S{material_print_temperature_layer_0}
+G28 ; Home All
+G29 P1 ; UBL Probe all
+G29 P3 ; UBL Fill the rest of the mesh
+G29 P5 C ; UBL Calculate mean and correct
+G29 P6 C0.13 ; UBL Lift Mesh by 0.1mm
+G20 S0 ; UBL Save to Slot 0
+G29 F10 ; UBL Fade Height set 10 10mm
+G29 A ; UBL Activate
+G29 L0 ; UBL Load Mesh 0
+GO Z5.0
+G0 X1 Y20
+G1 Z2.0 F3000
+G1 X1 Y20 Z0.3 F5000.0
+G1 X1 Y200.0 Z0.3 F1500.0 E15
+G1 X1.4 F5000.0
+G1 X1.4 Y20 Z0.3 F1500.0 E30
+G92 E0
+G1 Z2.0 F3000
+G1 X2 Y20 Z0.3 F5000.0
+M117 Printing Started...
+```
+
+## End G-Code ##
+```
+G91
+G1 E-1 F400
+G1 Z1 F500
+G1 E-2 F400
+G90
+G0 X220 Y220
+M400
+M106 S0
+M104 S0
+M140 S0
+M84
+G4 S1
+M500
+```
 
 # Marlin 3D Printer Firmware
 
