@@ -88,8 +88,8 @@
 #define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
-#define SHOW_CUSTOM_BOOTSCREEN
-#define CUSTOM_BOOTSCREEN_TIMEOUT 3000
+// #define SHOW_CUSTOM_BOOTSCREEN
+// #define CUSTOM_BOOTSCREEN_TIMEOUT 3000
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 // #define CUSTOM_STATUS_SCREEN_IMAGE
 
@@ -1168,6 +1168,9 @@
  * RAMPS-based boards use SERVO3_PIN for the first runout sensor.
  * For other boards you may need to define FIL_RUNOUT_PIN, FIL_RUNOUT2_PIN, etc.
  */
+#define FIL_RUNOUT_PIN PA4
+#define FIL_RUNOUT2_PIN PE6
+
 #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT false // Enable the sensor on startup. Override with M412 followed by M500.
@@ -2292,9 +2295,9 @@
  *   For LVGL_UI also copy the 'assets' folder from the build directory to the
  *   root of your SD card, together with the compiled firmware.
  */
-#define TFT_CLASSIC_UI
+//#define TFT_CLASSIC_UI
 //#define TFT_COLOR_UI
-//#define TFT_LVGL_UI
+#define TFT_LVGL_UI
 
 /**
  * TFT Rotation. Set to one of the following values:
