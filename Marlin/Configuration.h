@@ -1171,7 +1171,7 @@
 #define FIL_RUNOUT_PIN PA4
 #define FIL_RUNOUT2_PIN PE6
 
-#define FILAMENT_RUNOUT_SENSOR
+// #define FILAMENT_RUNOUT_SENSOR
 #if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_ENABLED_DEFAULT false // Enable the sensor on startup. Override with M412 followed by M500.
   #define NUM_RUNOUT_SENSORS   1          // Number of sensors, up to one per extruder. Define a FIL_RUNOUT#_PIN for each.
@@ -1313,7 +1313,7 @@
   //========================= Unified Bed Leveling ============================
   //===========================================================================
 
-  #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
+  // #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
   #define MESH_INSET 15              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
