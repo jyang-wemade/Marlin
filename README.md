@@ -1,3 +1,11 @@
+# Customized for Two Trees Sapphire Plus Printer #
+Unless you are running a 12V heater on the hotend like I am, you will want to update the `BANG_MAX` to `255` and `PID_MAX` to `BANG_MAX` and tune PID value as the values will not work for you.
+
+- Dual Z axis enabled
+- BLTouch is assumed to be connected to `MT_DET2`
+- There is a LVGL UI branch as well.  I am not using it though as menu options are limited compared to Marlin Classic UI.  
+
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
