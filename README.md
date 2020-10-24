@@ -18,21 +18,21 @@ G28 ; Home All
 G29 P1 ; UBL Probe all
 G29 P3 ; UBL Fill the rest of the mesh
 G29 P5 C ; UBL Calculate mean and correct
-G29 P6 C0.13 ; UBL Lift Mesh by 0.1mm
+G29 P6 C0.25 ; UBL Lift Mesh by 0.3mm
 G20 S0 ; UBL Save to Slot 0
 G29 F10 ; UBL Fade Height set 10 10mm
 G29 A ; UBL Activate
 G29 L0 ; UBL Load Mesh 0
 GO Z5.0
-G0 X1 Y20
+G0 X21 Y20
 G1 Z2.0 F3000
-G1 X1 Y20 Z0.3 F5000.0
-G1 X1 Y200.0 Z0.3 F1500.0 E15
-G1 X1.4 F5000.0
-G1 X1.4 Y20 Z0.3 F1500.0 E30
+G1 X21 Y20 Z0.3 F5000.0
+G1 X21 Y200.0 Z0.3 F1500.0 E15
+G1 X21.4 F5000.0
+G1 X21.4 Y20 Z0.3 F1500.0 E30
 G92 E0
 G1 Z2.0 F3000
-G1 X2 Y20 Z0.3 F5000.0
+G1 X22 Y20 Z0.3 F5000.0
 M117 Printing Started...
 ```
 
