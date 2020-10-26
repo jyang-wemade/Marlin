@@ -15,10 +15,9 @@ M104 S{material_print_temperature_layer_0}
 G28 X Y ; Home XY
 M109 S{material_print_temperature_layer_0}
 G28 ; Home All
-G29 P1 ; UBL Probe all
-G29 P3 ; UBL Fill the rest of the mesh
-G29 P5 C ; UBL Calculate mean and correct
-G29 P6 C0.25 ; UBL Lift Mesh by 0.3mm
+G29 P1 T ; UBL Probe all
+G29 P3 T ; UBL Fill the rest of the mesh
+G29 P6 C-0.30 ; UBL adjust down 0.3mm 
 G20 S0 ; UBL Save to Slot 0
 G29 F10 ; UBL Fade Height set 10 10mm
 G29 A ; UBL Activate
